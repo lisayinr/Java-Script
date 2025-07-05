@@ -1,15 +1,18 @@
 import { Student } from './student.js';
 import fs from 'fs';
 
+// Manages a list of students and manages the operations of the gradebook
 export class GradebookManager {
     constructor() {
         this.students = [];
     }
 
+    // Adds a new student to the gradebook
     addStudent(name) {
         this.students.push(new Student(name));
     }
 
+    // Deletes a student from the gradebook
     deleteStudent(name) {
         const cleanedName = name.trim().toLowerCase();
         const initialLength = this.students.length;
@@ -17,6 +20,7 @@ export class GradebookManager {
         return this.students.length < initialLength;
     }
 
+    // Prints all students with all of their grades
     viewStudentsWithGrades() {
         if (this.students.length === 0) {
             console.log("Np students in gradebook.");
@@ -31,10 +35,12 @@ export class GradebookManager {
         });
     }
 
+    // Finds a student by name
     findStudent(name) {
         return this.students.find(s => s.name.toLowerCase() === name.toLowerCase());
     }
 
+    // Prints all students with their average grades
     printAllAverages() {
         if (this.students.length === 0) {
             console.log("No students in gradebook.");
@@ -43,11 +49,13 @@ export class GradebookManager {
         this.students.forEach(s => console.log(s.toString()));
     }
 
+    // Saves the students and their grades to a text file
     saveToFile(filename) {
         const data = this.students.map(s => {
             return [s.name, ...s.grades].join(',');
         }).join('\n');
 
+        // Try writing to the file, handling any errors
         try {
             fs.writeFileSync(filename, data);
             console.log(`Data saved to ${filename}`);
@@ -56,8 +64,10 @@ export class GradebookManager {
         }
     }
 
+    // Loads student data from a text file
     loadFromFile(filename) {
         this.students =  [];
+        // Try reading from the file, handling any errors
         try  {
             const content = fs.readFileSync(filename, 'utf-8');
             const lines = content.trim().split('\n');

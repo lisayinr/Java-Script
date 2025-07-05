@@ -1,12 +1,14 @@
 import promptSync from 'prompt-sync';
 import { GradebookManager } from './gradebookManager.js';
 
+// Initialize prompt and gradebook manager
 const prompt = promptSync();
 const manager = new GradebookManager();
 const filename = 'students.txt';
 
 let running = true;
 
+// Main menu loop
 while (running) {
     console.log("\n--- Student Gradebook ---");
     console.log("1. Add Student");
@@ -19,6 +21,7 @@ while (running) {
     console.log("8. Exit");
     const choice = prompt("Choose an option: ");
 
+    // Perform the action based on the user's choice
     switch (choice) {
         case '1':
             const name = prompt("Enter student name: ");
