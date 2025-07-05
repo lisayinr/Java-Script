@@ -4,7 +4,7 @@ This project is a Student Gradebook application written in Javascript. The goal 
 
 The software allows users to add or delete students, input multiple grades for each student, calculate average grades, view students with their grades, and save and load data from files. This application demonstrates how JavaScript can be used for backend applications in Node.js. It is designed to be a simple, text-baased interface to easily test program logic.
 
-Video Demonstration of how my software works: [Software Demo Video](http://youtube.link.goes.here)
+Video Demonstration of how my software works: [Software Demo Video](https://youtu.be/IceSHB_nzlc)
 
 # Development Environment
 
