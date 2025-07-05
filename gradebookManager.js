@@ -23,12 +23,12 @@ export class GradebookManager {
     // Prints all students with all of their grades
     viewStudentsWithGrades() {
         if (this.students.length === 0) {
-            console.log("Np students in gradebook.");
+            console.log("No students in gradebook.");
             return;
         }
         this.students.forEach(s => {
             if (Array.isArray(s.grades) && s.grades.length > 0) {
-                console.log(`${s.name} - Grades: ${s.grades.join(', ') || "No grades"}`);
+                console.log(`${s.name} - Grades: ${s.grades.join(', ')}`);
             } else {
                 console.log(`${s.name} - No grades`);
             }

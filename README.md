@@ -1,7 +1,5 @@
 # Overview
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
 This project is a Student Gradebook application written in Javascript. The goal of this software is to demonstrate core Javascript programming conceptss such as classes, functions, arrays, conditionals, loops, and file input/output using Node.js. It provided an opportunity to practice using external libraaries in aa real-world style project.
 
 The software allows users to add or delete students, input multiple grades for each student, calculate average grades, view students with their grades, and save and load data from files. This application demonstrates how JavaScript can be used for backend applications in Node.js. It is designed to be a simple, text-baased interface to easily test program logic.
